@@ -24,8 +24,10 @@ func main() {
         // Add the core module to the container
         core.Module,
         fx.Invoke(
-            // Also add this, if you want to use GraphQL
-            core.UseGraphQl,
+            // Add this, if you want to use SwaggerUI
+            core.UseSwagger,
+            // Also add this, if you want to use GraphQL + Playground
+            core.UseGraphQlWithPlayground,
         ),
     ).Run()
 }
@@ -39,4 +41,5 @@ The list of uber/fx modules that are currently available:
 - Clerk database (MongoDB) - https://github.com/cozy-hosting/clerk
 - Messenger messaging queue (RabbitMQ) - https://github.com/cozy-hosting/messenger
 - Labstack Echo webserver - https://github.com/labstack/echo
+- Swagger UI trough swag - https://github.com/swaggo/swag
 - GraphQL Schema / Handling - https://github.com/graphql-go/graphql
